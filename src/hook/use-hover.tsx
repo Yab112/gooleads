@@ -1,41 +1,52 @@
 "use client";
-import React, { useState } from "react";
 
-const useHover = (ref: any, { x = 0, y = 0, z = 0 }) => {
+import React, { useState, useCallback, useEffect, RefObject } from "react";
+
+const useHover = <T extends HTMLElement>(
+  ref: RefObject<T>,
+  { x = 0, y = 0, z = 0 }
+) => {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
-  const handleMouseMove = (e: any) => {
-    const { offsetWidth: width, offsetHeight: height } = ref.current;
-    const { clientX, clientY } = e;
+  const handleMouseMove = useCallback(
+    (e: MouseEvent) => {
+      if (!ref.current) return;
 
-    const x = (clientX - width / 2) / width;
-    const y = (clientY - height / 2) / height;
+      const { offsetWidth: width, offsetHeight: height } = ref.current;
+      const { clientX, clientY } = e;
 
-    setCoords({ x, y });
-  };
+      const x = (clientX - width / 2) / width;
+      const y = (clientY - height / 2) / height;
 
-  const handleMouseEnter = () => {
+      setCoords({ x, y });
+    },
+    [ref]
+  );
+
+  const handleMouseEnter = useCallback(() => {
     setIsHovering(true);
-  };
+  }, []);
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = useCallback(() => {
     setIsHovering(false);
-  };
+  }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const { current } = ref;
 
-    current.addEventListener("mousemove", handleMouseMove);
-    current.addEventListener("mouseenter", handleMouseEnter);
-    current.addEventListener("mouseleave", handleMouseLeave);
+    if (current) {
+      current.addEventListener("mousemove", handleMouseMove);
+      current.addEventListener("mouseenter", handleMouseEnter);
+      current.addEventListener("mouseleave", handleMouseLeave);
 
-    return () => {
-      current.removeEventListener("mousemove", handleMouseMove);
-      current.removeEventListener("mouseenter", handleMouseEnter);
-      current.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, [ref, handleMouseMove]);
+      return () => {
+        current.removeEventListener("mousemove", handleMouseMove);
+        current.removeEventListener("mouseenter", handleMouseEnter);
+        current.removeEventListener("mouseleave", handleMouseLeave);
+      };
+    }
+  }, [ref.current, handleMouseMove, handleMouseEnter, handleMouseLeave]);
 
   const { x: xCoord, y: yCoord } = coords;
 

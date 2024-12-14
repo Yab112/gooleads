@@ -1,19 +1,11 @@
 import Header from "@/components/Header";
 import "./globals.css";
-import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Footer from "@/components/Footer";
 import ActiveSection from "@/context/activeSection";
 import { Toaster } from "react-hot-toast";
 import { siteConfig } from "@/config/site";
 import Script from "next/script";
-
-
-const popin = Poppins({
-  subsets: ["latin"],
-  weight: ["100", "200", "300"],
-  variable: "--font-popin",
-});
 
 
 export const metadata = {
