@@ -3,7 +3,6 @@ import React, { useRef } from "react";
 import { projectsData } from "@/lib/constant";
 import Image from "next/image";
 import { useScroll, useTransform, motion } from "framer-motion";
-import Link from "next/link";
 
 type ProjectProp = (typeof projectsData)[number];
 const Project = ({ title, description, tags, imageUrl, href }: ProjectProp) => {
@@ -16,15 +15,16 @@ const Project = ({ title, description, tags, imageUrl, href }: ProjectProp) => {
   const opacityProgess = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
   return (
     <motion.div
-      className="group my-8 bg-gray-600/20 border h-[300px] rounded-lg opacity-100 relative overflow-hidden text-[15px]"
+      className="group my-8 bg-cyan-100/20 border h-[300px] rounded-lg opacity-100 relative overflow-hidden text-[15px]"
       ref={ref}
       style={{
         scale: scaleProgess,
         opacity: opacityProgess,
       }}
     >
+      
       <a href={href} target="_black" className="">
-        <div className="w-full  sm:w-[50%] p-6 flex flex-row sm:flex-col h-full  sm:group-even:ml-[14rem]">
+        <div className="w-full  sm:w-[50%] p-6 flex flex-row sm:flex-col h-full  sm:group-even:ml-[14rem] border-b border-b-black">
           <div>
             <h3 className="text-2xl font-semibold">{title}</h3>
             <p className="mt-1 leading-relaxed font-Poppins text-black text-sm">
@@ -35,7 +35,7 @@ const Project = ({ title, description, tags, imageUrl, href }: ProjectProp) => {
           <ul className="flex flex-wrap mt-auto gap-2 ">
             {tags.map((tag, index) => (
               <li
-                className="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full"
+                className="bg-cyan-100/[0.1] border border-x-cyan-500 px-3 py-1 text-[0.7rem] uppercase tracking-wider text-black rounded-full"
                 key={index}
               >
                 {tag}

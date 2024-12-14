@@ -1,20 +1,11 @@
 import cisco from "../../public/cisc.png";
-import commerce from '../../public/commerce.jpg'
-import vent from "../../public/vent.jpg";
-import tour from "../../public/tour.jpg";
 import book from "../../public/b.png";
-import m from "../../public/m.png";
 import afca from "../../public/afca.png";
-import mela from "../../public/mela.png";
 import yeabrak from "../../public/yeabrak.png";
 import rec from "../../public/rec.png";
 import astmari from "../../public/astmari.png";
-
-
-
-import ba from "../../public/ba.png";
-
-
+import coders from "../../public/coder.png";
+import m from "../../public/m.png";
 
 export const links = [
   {
@@ -43,17 +34,8 @@ export const links = [
     href: "#contact",
   },
 ] as const;
-export const projectsData = [
-  {
-    title: "Recognise design",
-    description:
-      `This portfolio site for RecognizeDesign is crafted with the latest technologies,
-       emphasizing meticulous attention to animation and SEO.`,
-    tags: ["Atsrojs", "Tailwindcss", "Strapi cms",],
-    imageUrl: rec,
-    href: 'https://www.recognisedesign.com/'
 
-  },
+export const projectsData = [
 
   {
     title: "Yeabrak",
@@ -64,6 +46,15 @@ export const projectsData = [
     tags: ["React.js", "React query", "Mantine ui", "Django"],
     imageUrl: yeabrak,
     href: 'https://app.yeabrak.com/'
+  },
+  {
+    title: "Coders Social Media",
+    description:
+      `Coders social media is social mediaapp, 
+      designed for coders to share code snippets and connect with other coders.`,
+    tags: ["Nuxt", "Mantine ui", "nest.js", "Mongodb"],
+    imageUrl: coders,
+    href: 'https://app.coders.com/'
   },
 
   {
@@ -108,6 +99,7 @@ export const projectsData = [
 
 
 ] as const;
+
 export const skillsData = [
   "HTML",
   "CSS",
@@ -118,29 +110,29 @@ export const skillsData = [
   "Node.js",
   "Express.js",
   "Nestjs",
-  "Django",
   "Strapi cms",
 ] as const;
 
 
 export const service = [
   {
-    description: " With expertise in MERN Stack, TypeScript, and Next.js, I can help build custom web apps that are optimized for performance, security, and scalability.",
-    tag: "Use latest tech stacks.",
+    description: "With expertise in the MERN Stack, TypeScript, and Next.js, I specialize in building custom web applications that are optimized for performance, security, and scalability. Whether you need a dynamic single-page application or a complex multi-page solution, I can deliver robust solutions tailored to your needs.",
+    tag: "Cutting-edge Tech Stacks",
     title: "Web Application Development",
-    headerText: "I have experiance with  a lot of cool framerworks out there like React,Vue, Nodejs",
+    headerText: "I have experience with popular frameworks such as React, Vue, and Node.js."
   },
   {
-    description: "With API development expertise, I can help build powerful and scalable APIs to connect your apps with any service you require.",
-    tag: "Scalable APIs.",
+    description: "Leveraging my API development skills, I can help you build powerful and scalable APIs that seamlessly connect your applications to any service. From RESTful APIs to GraphQL, I ensure smooth integration and efficient communication between your systems and external services.",
+    tag: "Efficient and Scalable APIs",
     title: "API Development",
-    headerText: "Empowering Your Apps with Seamless Third-Party Integrations",
+    headerText: "Empowering Your Applications with Seamless Third-Party Integrations."
   },
   {
-    description: "As a UI/UX designer, I can help design and create intuitive user interfaces that ensure a seamless user experience.",
-    tag: "Intuitive Design",
+    description: "As a dedicated UI/UX designer, I can help create intuitive and visually appealing user interfaces that enhance the user experience. I focus on usability and aesthetics, ensuring that your applications are not only functional but also enjoyable to use.",
+    tag: "User-Centric Design",
     title: "UI/UX Design",
-    headerText: "Crafting User-Focused Interfaces for Seamless App Experiences",
+    headerText: "Crafting User-Focused Interfaces for Seamless App Experiences."
   }
-] as const
+] as const;
+
 

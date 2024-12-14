@@ -1,11 +1,11 @@
 
 
 export const siteConfig = {
-  name: "Abel's Portfolio",
+  name: "Yabibal Portfolio",
   description:
-    "Portfolio project containing projects that abel has been participating and build from scratch",
-  url: "https://abel-portfolio-site.vercel.app",
+    "Portfolio project containing projects that Yabibal has been participating and build from scratch",
+  url: "",
   links: {
-    github: "https://github.com/abinig29/new",
+    github: "https://github.com/Yab112/porfolioV2",
   },
 }

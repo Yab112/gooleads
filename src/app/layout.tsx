@@ -15,10 +15,7 @@ const popin = Poppins({
   variable: "--font-popin",
 });
 
-// export const metadata: Metadata = {
-//   title: "Abel's portfolio",
-//   description: "it is latest portfolio",
-// };
+
 export const metadata = {
   title: {
     default: siteConfig.name,
@@ -26,8 +23,8 @@ export const metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "Abel Nigus",
-    "Abel portfolio",
+    "yabibal Eshetie",
+    "Yabibal portfolio",
     "Website developer in Ethiopia",
     "Full-stack developer in Ethiopia",
     "Full-stack developer",
@@ -36,11 +33,11 @@ export const metadata = {
   ],
   authors: [
     {
-      name: "Abel nigus",
+      name: "Yabibal Eshetie",
       url: siteConfig.url,
     },
   ],
-  creator: "Abel Nigus",
+  creator: "Yabibal Eshetie",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
@@ -72,17 +69,13 @@ export default function RootLayout({
       <Script
         src="https://datafa.st/js/script.js"
         data-website-id="6722a5915dec9a6cf3c88dd1"
-        data-domain="abelnigus.com"
+        data-domain=""
         strategy="afterInteractive"
         defer
       />
       <body className="bg-gray-50 min-h-screen">
-        <Toaster position='top-center' />
+        <Toaster position='top-center'/>
         <ActiveSection>
-          {/* <div className="absolute hidden sm:block top-0 left-12 rounded-full w-[500px] h-[500px] bg-red-600/90  z-[-100]" /> */}
-          {/* <div className="absolute hidden sm:block bottom-6 right-12 rounded-full w-[100px] h-[100px] bg-black  z-[-100]" /> */}
-          {/* <div className="absolute hidden sm:block top-20 left-12 blur-3xl rounded-full w-[300px] h-[300px] bg-gray-200/20  z-[-100]" /> */}
-
           <Header />
           {children}
           <Footer />

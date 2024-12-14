@@ -12,9 +12,9 @@ export async function POST(req: Request) {
     const { text, email } = EmailValidator.parse(body);
     await resend.emails.send({
       from: "Contact Form <onboarding@resend.dev>",
-      to: "abinig5@gmail.com",
+      to: "eshetieyabibal@gmail.com",
       subject: "Message from contact form",
-      reply_to: email,
+      replyTo: email,
       text,
     });
 

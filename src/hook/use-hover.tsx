@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
 
- const useHover= (ref:any, { x = 0, y = 0, z = 0 }) =>{
+const useHover = (ref: any, { x = 0, y = 0, z = 0 }) => {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
-  const handleMouseMove = (e:any) => {
+  const handleMouseMove = (e: any) => {
     const { offsetWidth: width, offsetHeight: height } = ref.current;
     const { clientX, clientY } = e;
 
@@ -35,7 +35,7 @@ import React, { useState } from "react";
       current.removeEventListener("mouseenter", handleMouseEnter);
       current.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, [ref]);
+  }, [ref, handleMouseMove]);
 
   const { x: xCoord, y: yCoord } = coords;
 
@@ -47,5 +47,6 @@ import React, { useState } from "react";
   const transition = isHovering ? "none" : "all 0.5s ease";
 
   return { transform, transition };
-}
-export default useHover
+};
+
+export default useHover;

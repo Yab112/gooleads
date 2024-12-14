@@ -3,10 +3,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { IconBoxAlignRightFilled } from "@tabler/icons-react";
 import { BentoGrid, BentoGridItem } from "./ui/bento-grid";
 import { cn } from "@/utils/cn";
-import { Webhook } from 'lucide-react';
 import { service } from "@/lib/constant";
 import useActive from "@/hook/use-active";
 
@@ -109,10 +107,10 @@ const ServiceItem = ({ tag, headerText }: { tag: string, headerText: string }) =
             </motion.div> */}
             <motion.div
                 variants={variantsSecond}
-                className="flex flex-row rounded-full border border-neutral-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-white "
+                className="flex flex-row rounded-full border border-cyan-100 dark:border-white/[0.2] p-2 items-center justify-end space-x-2 w-3/4 ml-auto bg-gray-100 "
             >
-                <p className="text-xs text-neutral-500 capitalize">{tag}</p>
-                <div className="h-6 w-6 rounded-full bg-gradient-to-r from-red-500/30 to-white flex-shrink-0" />
+                <p className="text-xs text-neutral-800 capitalize">{tag}</p>
+                <div className="h-6 w-6 rounded-full bg-gradient-to-r from-purple-400/30 to-cyan-400 flex-shrink-0" />
             </motion.div>
         </motion.div>
     );

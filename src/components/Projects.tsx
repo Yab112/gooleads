@@ -14,6 +14,7 @@ const Projects = () => {
         My projects
       </h3>
       <div className="px-4 max-w-[1200px] grid sm:grid-cols-2 grid-cols-1 mx-auto sm:gap-8">
+        
         {projectsData.map((project: ProjectProp, index: number) => (
           <React.Fragment key={index}>
             <Project {...project} />

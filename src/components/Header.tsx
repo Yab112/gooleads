@@ -12,13 +12,13 @@ const Header = () => {
       <motion.div
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className=" px-4 py-2 w-full sm:max-w-[500px] mx-auto bg-gray-100 h-[50px] shadow-lg rounded-full flex justify-between items-center  z-[999]"
+        className=" px-4 py-2 w-full sm:max-w-[500px] mx-auto bg-gray-100 border-cyan-100 border h-[50px]  rounded-full flex justify-between items-center  z-[999]"
       >
         {links.map((value,index) => (
           <div
           key={index}
             className={clsx("px-3 py-1 relative rounded-full transition duration-800", {
-              "bg-gray-400/20": active === value.name,
+              "bg-cyan-600": active === value.name,
             })}
           >
             <Link
@@ -27,8 +27,8 @@ const Header = () => {
                 setActive(value.name)
                 setTimeOfLastClick(Date.now())
               }}
-              className={clsx("hover:text-gray-500 transition text-black", {
-                "text-gray-500 ": active === value.name,
+              className={clsx("hover:text-gray-400 transition text-black", {
+                "text-gray-200 ": active === value.name,
               })}
             >
               {value.name}
